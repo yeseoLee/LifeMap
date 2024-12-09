@@ -1,0 +1,113 @@
+.history-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.history-title {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+.history-list {
+    position: relative;
+    padding-left: 50px;
+    list-style: none;
+    counter-reset: none;
+}
+
+.history-list::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #ddd;
+}
+
+.year {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.year h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.year::before {
+    content: '';
+    position: absolute;
+    left: -43px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #007bff;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: row; /* column에서 row로 변경 */
+    align-items: center; /* 세로 중앙 정렬 */
+    gap: 20px;
+    flex: 1;
+}
+
+.month-list {
+    list-style: none;
+    padding: 0;
+}
+
+.month-list li {
+    margin-bottom: 25px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.history-image {
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    margin-top: 0;
+}
+
+.history-image:hover {
+    transform: scale(1.05);
+}
+
+.date {
+    color: #666;
+    min-width: 60px;
+}
+
+.content {
+    color: #333;
+    flex: 1;
+    display: inline; /* block에서 inline으로 변경 */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.sort-select {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.sort-select:hover {
+    border-color: #007bff;
+}
