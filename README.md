@@ -1,2 +1,2 @@
-# yeseoLee.github.io
-yeseoLee Github Page
+# Life Map
+yeseoLee's life map
