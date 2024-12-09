@@ -1,20 +1,29 @@
+/* 레이아웃 */
 .history-container {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 40px 20px 40px 120px;
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+/* 타이틀 */
 .history-title {
     text-align: center;
     margin-bottom: 50px;
     color: #333;
 }
 
+/* 타임라인 */
 .history-list {
     position: relative;
     padding-left: 50px;
     list-style: none;
-    counter-reset: none;
 }
 
 .history-list::before {
@@ -25,8 +34,10 @@
     bottom: 0;
     width: 2px;
     background: #ddd;
+    transform: translateX(-50%);
 }
 
+/* 연도 섹션 */
 .year {
     margin-bottom: 40px;
     position: relative;
@@ -35,12 +46,15 @@
 .year h2 {
     color: #007bff;
     margin-bottom: 20px;
+    position: absolute;
+    left: -110px;
+    top: -18px;
 }
 
 .year::before {
     content: '';
     position: absolute;
-    left: -43px;
+    left: -38px;
     top: 5px;
     width: 16px;
     height: 16px;
@@ -48,14 +62,7 @@
     background: #007bff;
 }
 
-.content-wrapper {
-    display: flex;
-    flex-direction: row; /* column에서 row로 변경 */
-    align-items: center; /* 세로 중앙 정렬 */
-    gap: 20px;
-    flex: 1;
-}
-
+/* 월별 리스트 */
 .month-list {
     list-style: none;
     padding: 0;
@@ -68,37 +75,50 @@
     align-items: flex-start;
 }
 
+.date {
+    color: #666;
+    min-width: 60px;
+}
+
+/* 콘텐츠 */
+.content-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+}
+
+.content {
+    color: #333;
+    flex: 1;
+    display: inline;
+}
+
+/* 이미지 */
+.image-container {
+    display: flex;
+    gap: 15px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 10px 0;
+    min-height: 150px;
+}
+
 .history-image {
-    max-width: 200px;
-    height: auto;
+    width: 240px; 
+    height: 160px; 
+    object-fit: cover; 
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
-    margin-top: 0;
 }
 
 .history-image:hover {
     transform: scale(1.05);
 }
 
-.date {
-    color: #666;
-    min-width: 60px;
-}
-
-.content {
-    color: #333;
-    flex: 1;
-    display: inline; /* block에서 inline으로 변경 */
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-}
-
+/* 정렬 선택 */
 .sort-select {
     padding: 8px 16px;
     border-radius: 6px;
@@ -110,4 +130,26 @@
 
 .sort-select:hover {
     border-color: #007bff;
+}
+
+/* 모달 */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.modal-image {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+    cursor: default;
 }
